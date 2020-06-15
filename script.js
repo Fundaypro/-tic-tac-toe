@@ -1,6 +1,7 @@
 let playerSimbol = 'X';
 let winCounter = 1;
-const points = 5;
+const points = +prompt('укажите количество символов для победы');
+
 
 document.addEventListener('click', function (event) {
     winCounter = 1
