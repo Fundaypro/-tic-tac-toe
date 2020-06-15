@@ -1,0 +1,17 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+
+}
+tr {
+    border: black 1px solid;
+    
+}
+.slot {
+    border: black 1px solid;
+    width: 20px;
+    height: 20px;
+}
+.slot:hover {
+    background-color: rgba(0, 0, 0, 0.363);
+}
