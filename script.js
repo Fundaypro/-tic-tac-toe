@@ -1,7 +1,12 @@
 let playerSimbol = 'X';
 let winCounter = 1;
-const points = +prompt('укажите количество символов для победы');
+// const points = +prompt('укажите количество символов для победы');
+const points = 5;
+let counter = {};
 
+let xWins = 0;
+
+let oWins = 0;
 
 document.addEventListener('click', function (event) {
     winCounter = 1
@@ -14,18 +19,33 @@ document.addEventListener('click', function (event) {
         
 
         winChek(event);
-        if (winCounter >= points) alert(`победил ` + playerSimbol)
+        if (winCounter >= points) {// увеличивает счетчик очков пи победе\объявляет победителя
+            
+            alert(`победил ` + playerSimbol)
+            if (playerSimbol === `X`) {
+                xWins++
+                document.querySelector(`.countsX`).innerText = xWins;
+            }
+            else if (playerSimbol === `O`) {
+                oWins++
+                document.querySelector(`.countsO`).innerText = oWins;
+            }
+            counter = {};
+            x = 0;
+            y = 0;
+            pageReset();
+            playerSimbol ='O';
+        }
         playerSimbol = (playerSimbol === `X`) ? 'O' : 'X'
-
+        console.log(counter)
+        
     } 
    }
 })
 
 
 
-let counter = {
 
-}
 let x = 0;
 let y = 0;
 
@@ -43,6 +63,7 @@ function pageReset() {
             document.getElementById(slot).innerText = slotSimbol;
             } 
             else document.getElementById(slot).innerText = '';
+            
         }
        }
 }
@@ -122,3 +143,35 @@ function winChek(event) {
     if (winCounter < points ) winCounter = 1;  
 
 }
+
+const btnBackToCenter = document.getElementById('backToCenter');
+
+btnBackToCenter.onclick = function() { //Возвращение в центр поля
+    
+    x = 0;
+    y = 0;
+    pageReset();
+
+};
+
+const btnRestartGame = document.getElementById('restartGame');
+
+btnRestartGame.onclick = function() { //Перезапуск игры +сброс счета
+
+    counter = {};
+    
+    
+    x = 0;
+    y = 0;
+    pageReset();
+
+
+}
+
+// ==================ТачСобытия===================//
+
+const gameArea = document.querySelector('.game-area');
+
+gameArea.addEventListener('touchmove', function(e) {
+    console.log(e);
+})

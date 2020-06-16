@@ -2,12 +2,88 @@ body {
     margin: 0 auto;
     padding: 0;
     background-color: rgba(0, 0, 255, 0.534);
+    height: 100%;
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     align-self: center;
 
+}
+
+.gameScreen {
+    margin-top: 25px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: flex-start;
+    
+
+}
+.gameMenu {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 100%;
+    width: 250px;
+
+}
+#backToCenter {
+    border-radius: 17px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: rgba(0, 0, 255, 0);
+    border: 3px solid rgb(0, 0, 0);
+    font-size: 17px;
+    width: 150px;
+    height: 50px;
+    outline: none;
+}
+#backToCenter:active {
+    
+    border: 3px solid rgba(0, 0, 0, 0.507);
+    background-color: rgba(255, 255, 255, 0.425);
+
+    
+}
+p.countStr {
+    text-align: center;
+    width: 100%;
+    font-size: 25px;
+    margin: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+p.gameCount {
+    text-align: center;
+    width: 95%;
+    font-size: 55px;
+    height: 65px;
+    padding-top: -44px;
+    margin: 0;
+    font-family: 'Open Sans Condensed', sans-serif;
+   
+}
+li {
+    padding-top: 5px;
+}
+#restartGame {
+    border-radius: 17px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    background-color: rgba(0, 0, 255, 0);
+    border: 3px solid rgb(0, 0, 0);
+    font-size: 17px;
+    width: 150px;
+    height: 50px;
+    
+    outline: none;
+}
+#restartGame:active {
+    
+    border: 3px solid rgba(0, 0, 0, 0.507);
+    background-color: rgba(255, 255, 255, 0.425);
 }
 .game-area {
     border: 14px solid rgba(0, 0, 0, 0.048);
